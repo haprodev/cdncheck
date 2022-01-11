@@ -21,6 +21,13 @@ var defaultScrapers = map[string]scraperFunc{
 	"cloudflare": scrapeCloudflare,
 	"incapsula":  scrapeIncapsula,
 	"sucuri":     scrapeSucuri,
+	"Qrator":  	AS200449,
+	"StackPath": 	AS12989,
+	"StormWall": 	AS59796,
+	"X4B": 	AS136165,
+	"DDoSGuard": AS57724,
+	"CDNetworks": AS36408,
+	
 }
 
 var cachedScrapers = map[string]scraperFunc{
