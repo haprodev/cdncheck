@@ -17,10 +17,16 @@ type Client struct {
 }
 
 var defaultScrapers = map[string]scraperFunc{
-	"akamai":     scrapeAkamai,
-	"cloudflare": scrapeCloudflare,
-	"incapsula":  scrapeIncapsula,
-	"sucuri":     scrapeSucuri,
+	"akamai":      scrapeAkamai,
+	"cloudflare":  scrapeCloudflare,
+	"incapsula":   scrapeIncapsula,
+	"sucuri":      scrapeSucuri,
+	"CDNetworks":  AS36408,
+	"DDoSGuard":   AS57724,
+	"Qrator":      AS200449,
+	"StackPath":   AS12989,
+	"StormWall":   AS59796,
+	"X4B":         AS136165,
 }
 
 var cachedScrapers = map[string]scraperFunc{
