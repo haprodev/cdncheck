@@ -89,6 +89,105 @@ func scrapeSucuri(httpClient *http.Client) ([]string, error) {
 	return cidrs, nil
 }
 
+func scrapeQrator(httpClient *http.Client) ([]string, error) {
+	resp, err := httpClient.Get("https://ipinfo.io/AS200449")
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+
+	data, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return nil, err
+	}
+	body := string(data)
+
+	cidrs := cidrRegex.FindAllString(body, -1)
+	return cidrs, nil
+}
+
+func scrapeX4B(httpClient *http.Client) ([]string, error) {
+	resp, err := httpClient.Get("https://ipinfo.io/AS12989")
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+
+	data, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return nil, err
+	}
+	body := string(data)
+
+	cidrs := cidrRegex.FindAllString(body, -1)
+	return cidrs, nil
+}
+
+func scrapeStackPath(httpClient *http.Client) ([]string, error) {
+	resp, err := httpClient.Get("https://ipinfo.io/AS12989")
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+
+	data, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return nil, err
+	}
+	body := string(data)
+
+	cidrs := cidrRegex.FindAllString(body, -1)
+	return cidrs, nil
+}
+func scrapeStormWall(httpClient *http.Client) ([]string, error) {
+	resp, err := httpClient.Get("https://ipinfo.io/AS59796")
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+
+	data, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return nil, err
+	}
+	body := string(data)
+
+	cidrs := cidrRegex.FindAllString(body, -1)
+	return cidrs, nil
+}
+
+func scrapeDDoSGuard(httpClient *http.Client) ([]string, error) {
+	resp, err := httpClient.Get("https://ipinfo.io/AS57724")
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+
+	data, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return nil, err
+	}
+	body := string(data)
+
+	cidrs := cidrRegex.FindAllString(body, -1)
+	return cidrs, nil
+}
+func scrapeCDNetworks(httpClient *http.Client) ([]string, error) {
+	resp, err := httpClient.Get("https://ipinfo.io/AS36408")
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+
+	data, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return nil, err
+	}
+	body := string(data)
+
+	cidrs := cidrRegex.FindAllString(body, -1)
+	return cidrs, nil
+}
 func scrapeProjectDiscovery(httpClient *http.Client) ([]string, error) {
 	resp, err := httpClient.Get("https://cdn.projectdiscovery.io/cdn/cdn-ips")
 	if err != nil {
