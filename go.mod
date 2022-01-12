@@ -1,4 +1,4 @@
-module github.com/projectdiscovery/cdncheck
+module github.com/haprodev/cdncheck
 
 go 1.14
 
